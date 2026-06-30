@@ -28,3 +28,8 @@ Thumbs.db
 
 # Database
 *.db
+
+# Runtime data
+backend/data/
+*.sqlite3
+*.db
