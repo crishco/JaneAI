@@ -1,0 +1,30 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environment variables
+.env
+
+# AI memory and embeddings
+memory/
+embeddings/
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.cursor/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Python cache
+.pytest_cache/
+.mypy_cache/
+
+# Database
+*.db
