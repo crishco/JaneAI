@@ -29,6 +29,21 @@ class Settings(BaseSettings):
     chroma_persist_directory: str = "./data/chroma"
     chroma_collection_name: str = "janeai_memory"
 
+    embedding_model: str = "all-MiniLM-L6-v2"
+    chunk_size_words: int = 500
+    chunk_overlap_words: int = 50
+    retrieval_top_k: int = 5
+
+    upload_directory: str = "./data/uploads"
+    upload_max_file_size_mb: int = 25
+    allowed_upload_extensions: tuple[str, ...] = (
+        ".pdf",
+        ".docx",
+        ".txt",
+        ".md",
+        ".markdown",
+    )
+
     log_level: str = "INFO"
     log_format: str = "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"
 

@@ -33,7 +33,10 @@ async def chat(
     logger.info("Received chat request (length=%d)", len(payload.message))
 
     try:
-        response_text = await chatbot.respond(payload.message)
+        result = await chatbot.respond(
+            payload.message,
+            conversation_id=payload.conversation_id,
+        )
     except ChatbotError as exc:
         logger.warning("Chat request failed: %s", exc)
         raise HTTPException(
@@ -41,4 +44,7 @@ async def chat(
             detail=str(exc),
         ) from exc
 
-    return ChatResponse(response=response_text)
+    return ChatResponse(
+        response=result.response,
+        conversation_id=result.conversation_id,
+    )
