@@ -44,6 +44,18 @@ class Settings(BaseSettings):
         ".markdown",
     )
 
+    api_host: str = "127.0.0.1"
+    api_port: int = 8765
+    cors_origins: tuple[str, ...] = (
+        "http://127.0.0.1:5173",
+        "http://localhost:5173",
+        "app://.",
+    )
+
+    whisper_model: str = "base"
+    piper_model_path: str = ""
+    piper_config_path: str = ""
+
     log_level: str = "INFO"
     log_format: str = "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"
 
